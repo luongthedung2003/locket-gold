@@ -11,33 +11,16 @@
 |
 */
 
-class VercelApplication extends Illuminate\Foundation\Application
-{
-    public function bootstrapPath($path = '')
-    {
-        return '/tmp/storage/bootstrap/cache' . ($path ? DIRECTORY_SEPARATOR . $path : '');
-    }
-
-    public function getCachedServicesPath() { return '/tmp/storage/bootstrap/cache/services.php'; }
-    public function getCachedPackagesPath() { return '/tmp/storage/bootstrap/cache/packages.php'; }
-    public function getCachedConfigPath() { return '/tmp/storage/bootstrap/cache/config.php'; }
-    public function getCachedRoutesPath() { return '/tmp/storage/bootstrap/cache/routes.php'; }
-}
-
-$appClass = isset($_SERVER['VERCEL']) || getenv('VERCEL') ? VercelApplication::class : Illuminate\Foundation\Application::class;
-
-$app = new $appClass(
+$app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-if (isset($_SERVER['VERCEL']) || getenv('VERCEL')) {
-    $app->instance(Illuminate\Foundation\PackageManifest::class, new Illuminate\Foundation\PackageManifest(
-        new Illuminate\Filesystem\Filesystem, $app->basePath(), $app->bootstrapPath('packages.php')
-    ));
-}
-
-if (isset($_SERVER['VERCEL'])) {
+// FORCE VERCEL PATHS
+if (true) { // Force for now to be 100% sure it executes
     $app->useStoragePath('/tmp/storage');
+    $app->bind('path.bootstrap', function () {
+        return '/tmp/storage/bootstrap/cache';
+    });
 }
 
 /*
