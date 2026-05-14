@@ -17,6 +17,11 @@ class VercelApplication extends Illuminate\Foundation\Application
     {
         return '/tmp/storage/bootstrap/cache' . ($path ? DIRECTORY_SEPARATOR . $path : '');
     }
+
+    public function getCachedServicesPath() { return '/tmp/storage/bootstrap/cache/services.php'; }
+    public function getCachedPackagesPath() { return '/tmp/storage/bootstrap/cache/packages.php'; }
+    public function getCachedConfigPath() { return '/tmp/storage/bootstrap/cache/config.php'; }
+    public function getCachedRoutesPath() { return '/tmp/storage/bootstrap/cache/routes.php'; }
 }
 
 $appClass = isset($_SERVER['VERCEL']) || getenv('VERCEL') ? VercelApplication::class : Illuminate\Foundation\Application::class;
