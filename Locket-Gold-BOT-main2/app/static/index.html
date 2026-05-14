@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locket Gold Activator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg: #0a0a0f;
+            --card: #12121a;
+            --card-border: #1e1e2e;
+            --gold: #f5c518;
+            --gold-dim: #c9a000;
+            --gold-glow: rgba(245, 197, 24, 0.15);
+            --text: #e4e4e7;
+            --text-dim: #71717a;
+            --success: #22c55e;
+            --error: #ef4444;
+            --accent: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-pattern {
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(245, 197, 24, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 32px 0 24px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 20px rgba(245, 197, 24, 0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), #ffd700, var(--gold-dim));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: var(--text-dim);
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(245, 197, 24, 0.2);
+        }
+
+        /* Input */
+        .input-group {
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+
+        input[type="text"]::placeholder {
+            color: #3f3f46;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+            color: #000;
+            box-shadow: 0 4px 16px rgba(245, 197, 24, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 197, 24, 0.35);
+        }
+
+        .btn-primary:active { transform: translateY(0); }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-activate {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.25);
+            margin-top: 16px;
+        }
+
+        .btn-activate:hover {
+            box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .btn-dns {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25);
+            margin-top: 12px;
+            text-decoration: none;
+        }
+
+        /* User Info */
+        .user-info {
+            display: none;
+            animation: slideIn 0.4s ease;
+        }
+
+        .user-info.show { display: block; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: 13px;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-gold {
+            background: var(--gold-glow);
+            color: var(--gold);
+            border: 1px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .badge-free {
+            background: rgba(113, 113, 122, 0.15);
+            color: var(--text-dim);
+            border: 1px solid rgba(113, 113, 122, 0.2);
+        }
+
+        /* Terminal */
+        .terminal {
+            display: none;
+            background: #09090b;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 16px;
+            animation: slideIn 0.4s ease;
+        }
+
+        .terminal.show { display: block; }
+
+        .terminal-header {
+            background: rgba(255,255,255,0.03);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .terminal-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .terminal-body {
+            padding: 16px;
+            font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.8;
+            max-height: 240px;
+            overflow-y: auto;
+            color: #a1a1aa;
+        }
+
+        .terminal-body::-webkit-scrollbar { width: 4px; }
+        .terminal-body::-webkit-scrollbar-track { background: transparent; }
+        .terminal-body::-webkit-scrollbar-thumb { background: #27272a; border-radius: 2px; }
+
+        .log-success { color: var(--success); }
+        .log-error { color: var(--error); }
+        .log-warn { color: var(--gold); }
+
+        /* Result */
+        .result-card {
+            display: none;
+            text-align: center;
+            padding: 32px 24px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .result-card.show { display: block; }
+
+        .result-icon {
+            font-size: 56px;
+            margin-bottom: 12px;
+        }
+
+        .result-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .result-sub {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 24px 0;
+            color: #3f3f46;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: var(--gold-dim);
+            text-decoration: none;
+        }
+
+        /* Pulse animation */
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">👑</div>
+            <h1>Locket Gold</h1>
+            <p>Kích hoạt Gold nhanh chóng & an toàn</p>
+        </div>
+
+        <!-- Input Card -->
+        <div class="card" id="inputCard">
+            <div class="input-group">
+                <label>🔑 Username hoặc Link Locket</label>
+                <div class="input-wrapper">
+                    <input type="text" id="usernameInput" placeholder="Nhập username..." autocomplete="off">
+                    <button class="btn btn-primary" id="checkBtn" onclick="checkUser()">
+                        Kiểm tra
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Info Card -->
+        <div class="card user-info" id="userInfo">
+            <div class="info-row">
+                <span class="info-label">👤 Username</span>
+                <span class="info-value" id="displayUsername">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">🆔 UID</span>
+                <span class="info-value" id="displayUid" style="font-size:11px;">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">⭐ Trạng thái</span>
+                <span id="displayStatus">-</span>
+            </div>
+            
+            <div id="actionArea">
+                <!-- Dynamic buttons appear here -->
+            </div>
+        </div>
+
+        <!-- Terminal -->
+        <div class="terminal" id="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dot" style="background:#ef4444"></div>
+                <div class="terminal-dot" style="background:#f59e0b"></div>
+                <div class="terminal-dot" style="background:#22c55e"></div>
+                <span style="color:#52525b;font-size:12px;margin-left:8px;">System Exploit</span>
+            </div>
+            <div class="terminal-body" id="terminalBody"></div>
+        </div>
+
+        <!-- Result -->
+        <div class="card result-card" id="resultCard">
+            <div class="result-icon" id="resultIcon">✅</div>
+            <div class="result-title" id="resultTitle">Thành công!</div>
+            <div class="result-sub" id="resultSub">Gold đã được kích hoạt</div>
+            <div id="dnsArea" style="margin-top:20px;"></div>
+        </div>
+
+        <div class="footer">
+            <p>Powered by <a href="#">Locket Gold VIP</a> — By VuLinh 💛</p>
+        </div>
+    </div>
+
+    <script>
+        let currentUid = null;
+        let currentUsername = null;
+
+        // Enter key support
+        document.getElementById('usernameInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkUser();
+        });
+
+        async function checkUser() {
+            const input = document.getElementById('usernameInput').value.trim();
+            if (!input) return;
+
+            const btn = document.getElementById('checkBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>';
+
+            hideAll();
+
+            try {
+                const res = await fetch('/api/resolve', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username: input})
+                });
+                
+                const data = await res.json();
+                
+                if (!res.ok) {
+                    showError(data.error || 'Lỗi không xác định');
+                    return;
+                }
+
+                currentUid = data.uid;
+                currentUsername = data.username;
+
+                document.getElementById('displayUsername').textContent = data.username;
+                document.getElementById('displayUid').textContent = data.uid;
+
+                const actionArea = document.getElementById('actionArea');
+                
+                if (data.is_gold) {
+                    document.getElementById('displayStatus').innerHTML = 
+                        '<span class="badge badge-gold">👑 Gold Active</span>';
+                    actionArea.innerHTML = `
+                        <div style="margin-top:16px;padding:16px;background:var(--gold-glow);border-radius:12px;border:1px solid rgba(245,197,24,0.2);">
+                            <p style="color:var(--gold);font-weight:600;font-size:14px;">✅ Bạn đã có Gold rồi!</p>
+                            <p style="color:var(--text-dim);font-size:13px;margin-top:4px;">Chỉ cần cài DNS để giữ Gold vĩnh viễn</p>
+                        </div>
+                        <a href="/api/dns/${currentUid}/${currentUsername}" class="btn btn-dns" style="display:flex;">
+                            🛡️ Tải DNS Profile (.mobileconfig)
+                        </a>`;
+                } else {
+                    document.getElementById('displayStatus').innerHTML = 
+                        '<span class="badge badge-free">Free</span>';
+                    actionArea.innerHTML = `
+                        <button class="btn btn-activate" onclick="activateGold()">
+                            ⚡ KÍCH HOẠT GOLD
+                        </button>`;
+                }
+
+                document.getElementById('userInfo').classList.add('show');
+
+            } catch (err) {
+                showError('Lỗi kết nối server');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Kiểm tra';
+            }
+        }
+
+        async function activateGold() {
+            if (!currentUid) return;
+
+            const actionArea = document.getElementById('actionArea');
+            actionArea.innerHTML = `
+                <button class="btn btn-activate" disabled style="opacity:0.6;">
+                    <span class="spinner"></span> Đang xử lý...
+                </button>`;
+
+            const terminal = document.getElementById('terminal');
+            const terminalBody = document.getElementById('terminalBody');
+            terminal.classList.add('show');
+            terminalBody.innerHTML = '<span class="pulse" style="color:#f59e0b;">⏳ Đang kết nối...</span>\n';
+
+            try {
+                const res = await fetch('/api/activate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({uid: currentUid, username: currentUsername})
+                });
+
+                const data = await res.json();
+
+                // Show logs
+                terminalBody.innerHTML = '';
+                if (data.logs) {
+                    data.logs.forEach(log => {
+                        const line = document.createElement('div');
+                        line.textContent = log;
+                        if (log.includes('SUCCESS') || log.includes('OK') || log.includes('200')) {
+                            line.className = 'log-success';
+                        } else if (log.includes('Error') || log.includes('Failed') || log.includes('Rejected')) {
+                            line.className = 'log-error';
+                        } else if (log.includes('Attempt') || log.includes('Waiting')) {
+                            line.className = 'log-warn';
+                        }
+                        terminalBody.appendChild(line);
+                    });
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                }
+
+                // Show result
+                const resultCard = document.getElementById('resultCard');
+                const dnsArea = document.getElementById('dnsArea');
+
+                if (data.success) {
+                    document.getElementById('resultIcon').textContent = '🎉';
+                    document.getElementById('resultTitle').textContent = 'Kích hoạt thành công!';
+                    document.getElementById('resultSub').textContent = 'Gold 30 ngày đã được kích hoạt';
+                    
+                    dnsArea.innerHTML = `
+                        <p style="color:var(--text-dim);font-size:13px;margin-bottom:12px;">
+                            🛡️ <b>Cài DNS để giữ Gold vĩnh viễn:</b>
+                        </p>
+                        ${data.mobileconfig_url ? `
+                            <a href="${data.mobileconfig_url}" class="btn btn-dns" style="display:flex;text-decoration:none;">
+                                📲 Tải DNS Profile cho iOS
+                            </a>` : ''}
+                        ${data.dns_pid ? `
+                            <div style="margin-top:12px;padding:12px;background:rgba(255,255,255,0.03);border-radius:8px;">
+                                <p style="font-size:12px;color:var(--text-dim);">Android Private DNS:</p>
+                                <code style="color:var(--gold);font-size:13px;">${data.dns_pid}.dns.nextdns.io</code>
+                            </div>` : ''}`;
+                } else {
+                    document.getElementById('resultIcon').textContent = '❌';
+                    document.getElementById('resultTitle').textContent = 'Kích hoạt thất bại';
+                    document.getElementById('resultSub').textContent = data.message || 'Vui lòng thử lại sau';
+                    dnsArea.innerHTML = `
+                        <button class="btn btn-activate" onclick="activateGold()" style="margin-top:12px;">
+                            🔄 Thử lại
+                        </button>`;
+                }
+
+                actionArea.innerHTML = '';
+                resultCard.classList.add('show');
+
+            } catch (err) {
+                terminalBody.innerHTML += '<div class="log-error">❌ Lỗi kết nối server</div>';
+                actionArea.innerHTML = `
+                    <button class="btn btn-activate" onclick="activateGold()">
+                        🔄 Thử lại
+                    </button>`;
+            }
+        }
+
+        function showError(msg) {
+            const resultCard = document.getElementById('resultCard');
+            document.getElementById('resultIcon').textContent = '⚠️';
+            document.getElementById('resultTitle').textContent = msg;
+            document.getElementById('resultSub').textContent = '';
+            document.getElementById('dnsArea').innerHTML = '';
+            resultCard.classList.add('show');
+        }
+
+        function hideAll() {
+            document.getElementById('userInfo').classList.remove('show');
+            document.getElementById('terminal').classList.remove('show');
+            document.getElementById('resultCard').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
