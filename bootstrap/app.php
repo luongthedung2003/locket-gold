@@ -11,7 +11,17 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+class VercelApplication extends Illuminate\Foundation\Application
+{
+    public function bootstrapPath($path = '')
+    {
+        return '/tmp/storage/bootstrap/cache' . ($path ? DIRECTORY_SEPARATOR . $path : '');
+    }
+}
+
+$appClass = isset($_SERVER['VERCEL']) ? VercelApplication::class : Illuminate\Foundation\Application::class;
+
+$app = new $appClass(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
