@@ -26,58 +26,41 @@ class DatabaseSeeder extends Seeder
 
         // Tạo các gói Locket Gold mặc định
         Plan::create([
-            'name' => 'Gói 1 Tháng',
+            'name' => 'Gói Gold 1 Tháng',
             'price' => 49000,
-            'description' => 'Trải nghiệm đầy đủ tính năng trong 30 ngày',
-            'features' => ['Video 3s - 60s', 'Đổi Icon ứng dụng', 'Badge vàng chính chủ'],
+            'description' => 'Trải nghiệm đầy đủ tính năng Gold trong vòng 30 ngày.',
+            'features' => ['Video dài từ 3s - 60s', 'Tùy chỉnh Icon ứng dụng', 'Badge vàng chính chủ', 'Bảo hành 1 đổi 1'],
         ]);
 
         Plan::create([
-            'name' => 'Gói 1 Năm',
-            'price' => 199000,
-            'description' => 'Tiết kiệm hơn với gói 12 tháng',
-            'features' => ['Video 3s - 60s', 'Đổi Icon ứng dụng', 'Badge vàng chính chủ', 'Bảo hành trọn đời'],
+            'name' => 'Gói Gold 1 Năm',
+            'price' => 189000,
+            'description' => 'Gói tiết kiệm được yêu thích nhất cho người dùng trung thành.',
+            'features' => ['Full tính năng Gold 12 tháng', 'Icon Premium giới hạn', 'Hỗ trợ kích hoạt nhanh', 'Bảo hành trọn thời hạn'],
         ]);
 
         Plan::create([
-            'name' => 'Gói Vĩnh Viễn',
-            'price' => 499000,
-            'description' => 'Mua một lần, sử dụng mãi mãi',
-            'features' => ['Full đặc quyền', 'Hỗ trợ ưu tiên 24/7', 'Badge Gold giới hạn'],
+            'name' => 'Gói Gold Vĩnh Viễn',
+            'price' => 450000,
+            'description' => 'Sở hữu trọn đời các đặc quyền cao cấp nhất của Locket.',
+            'features' => ['Full đặc quyền vĩnh viễn', 'Mở khóa mọi tính năng tương lai', 'Hỗ trợ ưu tiên 24/7', 'Badge Gold giới hạn độc quyền'],
         ]);
 
         // Tạo các bài viết mẫu
         Post::create([
-            'title' => 'Cách nâng cấp Locket Gold mới nhất 2026',
+            'title' => 'Locket Gold là gì? Tại sao nên nâng cấp ngay hôm nay?',
             'image' => 'hero1.png',
-            'excerpt' => 'Hướng dẫn chi tiết từng bước để sở hữu các tính năng cao cấp của Locket chỉ trong 5 phút.',
-            'content' => '<p>Locket Gold mang đến những trải nghiệm tuyệt vời như tải video dài, đổi icon ứng dụng...</p>',
-            'category' => 'Hướng dẫn',
-        ]);
-
-        Post::create([
-            'title' => 'Hướng dẫn kích hoạt Locket Gold bằng Video',
-            'image' => 'hero1.png',
-            'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-            'excerpt' => 'Xem video để biết cách kích hoạt gói Locket Gold nhanh chóng và đơn giản nhất.',
-            'content' => '<p>Trong video này, chúng tôi sẽ hướng dẫn bạn chi tiết cách thanh toán và kích hoạt...</p>',
-            'category' => 'Hướng dẫn',
-        ]);
-
-        Post::create([
-            'title' => 'Top 5 tính năng đáng giá nhất trên Locket Gold',
-            'image' => 'hero2.png',
-            'excerpt' => 'Tại sao hàng triệu người dùng đang săn đón gói nâng cấp Gold này? Hãy cùng khám phá.',
-            'content' => '<p>Tính năng tải video dài từ 30s đến 60s là một trong những điểm cộng lớn nhất...</p>',
+            'excerpt' => 'Khám phá tất cả các tính năng độc quyền mà bản Locket miễn phí không bao giờ có được.',
+            'content' => '<p>Locket Gold là phiên bản trả phí cao cấp của ứng dụng Locket, mang lại sự tự do và sáng tạo không giới hạn cho người dùng...</p>',
             'category' => 'Tin tức',
         ]);
 
         Post::create([
-            'title' => 'Chính sách bảo hành và hỗ trợ tại LocketGold.com',
-            'image' => 'hero3.png',
-            'excerpt' => 'Chúng tôi cam kết bảo hành trọn đời cho các gói nâng cấp vĩnh viễn và hỗ trợ 24/7.',
-            'content' => '<p>Sự hài lòng của khách hàng là ưu tiên hàng đầu của chúng tôi...</p>',
-            'category' => 'Chính sách',
+            'title' => 'Hướng dẫn 3 bước kích hoạt Locket Gold cực nhanh',
+            'image' => 'hero2.png',
+            'excerpt' => 'Chỉ mất chưa đầy 5 phút để bạn sở hữu huy hiệu vàng và các tính năng Premium.',
+            'content' => '<p>Bước 1: Chọn gói cước phù hợp. Bước 2: Thanh toán qua mã QR. Bước 3: Nhập mã kích hoạt và tận hưởng...</p>',
+            'category' => 'Hướng dẫn',
         ]);
     }
 }
