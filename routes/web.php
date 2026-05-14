@@ -47,6 +47,16 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/setup-db', function () {
+        try {
+            \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--force' => true]);
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+            return "Database Migrated and Seeded Successfully!";
+        } catch (\Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    });
+
     Route::get('/login', function () {
         return view('admin.auth.login');
     })->name('login');
