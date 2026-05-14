@@ -19,11 +19,17 @@ class VercelApplication extends Illuminate\Foundation\Application
     }
 }
 
-$appClass = isset($_SERVER['VERCEL']) ? VercelApplication::class : Illuminate\Foundation\Application::class;
+$appClass = isset($_SERVER['VERCEL']) || getenv('VERCEL') ? VercelApplication::class : Illuminate\Foundation\Application::class;
 
 $app = new $appClass(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+
+if (isset($_SERVER['VERCEL']) || getenv('VERCEL')) {
+    $app->instance(Illuminate\Foundation\PackageManifest::class, new Illuminate\Foundation\PackageManifest(
+        new Illuminate\Filesystem\Filesystem, $app->basePath(), $app->bootstrapPath('packages.php')
+    ));
+}
 
 if (isset($_SERVER['VERCEL'])) {
     $app->useStoragePath('/tmp/storage');
