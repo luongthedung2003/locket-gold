@@ -1,13 +1,12 @@
 <?php
 
 // Vercel is read-only, so we must use /tmp for compilation and logs
-if (isset($_SERVER['VERCEL'])) {
-    mkdir('/tmp/storage/framework/views', 0755, true);
-    mkdir('/tmp/storage/framework/sessions', 0755, true);
-    mkdir('/tmp/storage/framework/cache', 0755, true);
-    mkdir('/tmp/storage/bootstrap/cache', 0755, true);
-    mkdir('/tmp/storage/logs', 0755, true);
-}
+// Ensure directories exist in /tmp
+@mkdir('/tmp/storage/framework/views', 0777, true);
+@mkdir('/tmp/storage/framework/sessions', 0777, true);
+@mkdir('/tmp/storage/framework/cache', 0777, true);
+@mkdir('/tmp/storage/bootstrap/cache', 0777, true);
+@mkdir('/tmp/storage/logs', 0777, true);
 
 putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
 putenv('SESSION_DRIVER=cookie');
